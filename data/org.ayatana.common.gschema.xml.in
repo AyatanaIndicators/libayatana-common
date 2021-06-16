@@ -1,10 +1,10 @@
 <schemalist>
     <schema gettext-domain="ayatana-common" id="org.ayatana.common" path="/org/ayatana/common/">
         <key name="max-menu-text-length" type="u">
-            <range min="1" max="100"/>
+            <range min="0" max="100"/>
             <default>50</default>
             <_summary>Maximum menu text length</_summary>
-            <_description>The number of characters to show in dynamic menu items before the text is ellipsized.</_description>
+            <_description>The number of characters to show in dynamic menu items before the text is ellipsized. Set to 0 to leave unchanged.</_description>
         </key>
     </schema>
 </schemalist>

@@ -293,7 +293,7 @@ void ayatana_common_utils_elipsize(char *sText)
         }
     }
 
-    if (nLetters > nMaxLetters + 4)
+    if (nMaxLetters > 0 && nLetters > nMaxLetters + 4)
     {
         gchar *pLastChar = g_utf8_offset_to_pointer(sText, nMaxLetters);
         memcpy(pLastChar, "...\0", 4);
