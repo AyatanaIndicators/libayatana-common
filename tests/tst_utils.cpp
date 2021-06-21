@@ -99,22 +99,22 @@ public:
     }
 };
 
-TEST_F(StringFunctionsTest, elipsize)
+TEST_F(StringFunctionsTest, ellipsize)
 {
     GSettings *pSettings = g_settings_new("org.ayatana.common");
     gchar *sTest = g_strdup("123456789012345678901234567890123456789012345öüóőúéáűšđß");
     g_settings_set_uint(pSettings, "max-menu-text-length", 0);
-    ayatana_common_utils_elipsize(sTest);
+    ayatana_common_utils_ellipsize(sTest);
 
     EXPECT_STREQ(sTest, "123456789012345678901234567890123456789012345öüóőúéáűšđß");
 
     g_settings_set_uint(pSettings, "max-menu-text-length", 100);
-    ayatana_common_utils_elipsize(sTest);
+    ayatana_common_utils_ellipsize(sTest);
 
     EXPECT_STREQ(sTest, "123456789012345678901234567890123456789012345öüóőúéáűšđß");
 
     g_settings_set_uint(pSettings, "max-menu-text-length", 50);
-    ayatana_common_utils_elipsize(sTest);
+    ayatana_common_utils_ellipsize(sTest);
 
     EXPECT_STREQ(sTest, "123456789012345678901234567890123456789012345öüóőú...");
 
