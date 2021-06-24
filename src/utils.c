@@ -274,7 +274,7 @@ ayatana_common_utils_zenity_warning (const char * icon_name,
   return confirmed;
 }
 
-void ayatana_common_utils_elipsize(char *sText)
+void ayatana_common_utils_ellipsize(char *sText)
 {
     guint nMaxLetters = 50;
     glong nLetters = g_utf8_strlen(sText, -1);
@@ -293,7 +293,7 @@ void ayatana_common_utils_elipsize(char *sText)
         }
     }
 
-    if (nLetters > nMaxLetters + 4)
+    if (nMaxLetters > 0 && nLetters > nMaxLetters + 4)
     {
         gchar *pLastChar = g_utf8_offset_to_pointer(sText, nMaxLetters);
         memcpy(pLastChar, "...\0", 4);

@@ -90,44 +90,34 @@ public:
 
     void SetUp()
     {
-        GSettingsSchemaSource *pSource = g_settings_schema_source_get_default();
-
-        if (pSource != NULL)
-        {
-            GSettingsSchema *pSchema = g_settings_schema_source_lookup(pSource, "org.ayatana.common", FALSE);
-
-            if (pSchema != NULL)
-            {
-                g_settings_schema_unref(pSchema);
-                this->pSettings = g_settings_new("org.ayatana.common");
-                this->nMaxLetters = g_settings_get_uint(pSettings, "max-menu-text-length");
-                g_settings_set_uint(this->pSettings, "max-menu-text-length", 50);
-            }
-        }
+        g_setenv("GSETTINGS_SCHEMA_DIR", SCHEMA_DIR, TRUE);
+        g_setenv("GSETTINGS_BACKEND", "memory", TRUE);
     }
 
     void TearDown()
     {
-        if (this->pSettings != NULL)
-        {
-            g_settings_set_uint(pSettings, "max-menu-text-length", this->nMaxLetters);
-            g_object_unref(this->pSettings);
-        }
     }
-
-private:
-
-    GSettings *pSettings;
-    guint nMaxLetters;
 };
 
-TEST_F(StringFunctionsTest, elipsize)
+TEST_F(StringFunctionsTest, ellipsize)
 {
-    gchar *sTest1 = g_strdup("öüóőúéáűšđß");
-    ayatana_common_utils_elipsize((gchar*)sTest1);
-    EXPECT_STREQ(sTest1, "öüóőúéáűšđß");
+    GSettings *pSettings = g_settings_new("org.ayatana.common");
+    gchar *sTest = g_strdup("123456789012345678901234567890123456789012345öüóőúéáűšđß");
+    g_settings_set_uint(pSettings, "max-menu-text-length", 0);
+    ayatana_common_utils_ellipsize(sTest);
 
-    gchar *sTest2 = g_strdup("123456789012345678901234567890123456789012345öüóőúéáűšđß");
-    ayatana_common_utils_elipsize((gchar*)sTest2);
-    EXPECT_STREQ(sTest2, "123456789012345678901234567890123456789012345öüóőú...");
+    EXPECT_STREQ(sTest, "123456789012345678901234567890123456789012345öüóőúéáűšđß");
+
+    g_settings_set_uint(pSettings, "max-menu-text-length", 100);
+    ayatana_common_utils_ellipsize(sTest);
+
+    EXPECT_STREQ(sTest, "123456789012345678901234567890123456789012345öüóőúéáűšđß");
+
+    g_settings_set_uint(pSettings, "max-menu-text-length", 50);
+    ayatana_common_utils_ellipsize(sTest);
+
+    EXPECT_STREQ(sTest, "123456789012345678901234567890123456789012345öüóőú...");
+
+    g_free(sTest);
+    g_object_unref(pSettings);
 }
