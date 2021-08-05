@@ -14,6 +14,7 @@ set(ABI_VERSION 0)
 # Options
 option(ENABLE_TESTS "Enable all tests and checks" OFF)
 option(ENABLE_COVERAGE "Enable coverage reports (includes enabling all tests and checks)" OFF)
+option(ENABLE_WERROR "Treat all build warnings as errors" OFF)
 
 if(ENABLE_COVERAGE)
     set(ENABLE_TESTS ON)
@@ -22,6 +23,10 @@ else()
     set(CMAKE_BUILD_TYPE "Release")
 endif()
 
+if(ENABLE_WERROR)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+endif()
 
 # GNU standard installation directories
 include (GNUInstallDirs)
@@ -68,3 +73,4 @@ endif()
 
 message(STATUS "Install prefix: ${CMAKE_INSTALL_PREFIX}")
 message(STATUS "Unit tests: ${ENABLE_TESTS}")
+message(STATUS "Build with -Werror: ${ENABLE_WERROR}")

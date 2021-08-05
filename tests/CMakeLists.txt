@@ -1,7 +1,5 @@
 find_package(GMock)
 
-SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -no-pie")
-
 # gschemas.compiled
 
 set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES "gschemas.compiled")
@@ -21,6 +19,7 @@ add_custom_target("gschemas-compiled" ALL DEPENDS "gschemas.compiled")
 
 add_executable(tst_utils tst_utils.cpp)
 target_compile_definitions(tst_utils PUBLIC SCHEMA_DIR="${CMAKE_CURRENT_BINARY_DIR}")
+target_link_options(tst_utils PRIVATE -no-pie)
 add_dependencies(tst_utils "gschemas-compiled")
 target_include_directories(tst_utils PUBLIC "${CMAKE_SOURCE_DIR}/src")
 
