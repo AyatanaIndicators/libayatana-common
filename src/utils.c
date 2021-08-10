@@ -48,9 +48,7 @@ is_xdg_current_desktop (const gchar* desktop)
 gboolean
 ayatana_common_utils_is_lomiri ()
 {
-  // For legacy reasons keep the MIR_SOCKET hack
-  return (g_getenv ("MIR_SOCKET") != NULL ||
-          is_xdg_current_desktop(DESKTOP_LOMIRI));
+  return is_xdg_current_desktop(DESKTOP_LOMIRI);
 }
 
 gboolean
