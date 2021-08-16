@@ -1,6 +1,8 @@
 project (libayatana-common C CXX)
 cmake_minimum_required(VERSION 3.13)
 
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" "${CMAKE_MODULE_PATH}")
+
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET(CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "..." FORCE)
 endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
@@ -63,7 +65,7 @@ if (ENABLE_TESTS)
         find_package(CoverageReport)
         ENABLE_COVERAGE_REPORT(
             TARGETS "ayatana-common"
-            TESTS "tst_utils"
+            TESTS "tst_utils" "tst_utils_vala"
             FILTER /usr/include ${CMAKE_BINARY_DIR}/*
         )
     endif()

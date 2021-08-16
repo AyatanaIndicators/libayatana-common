@@ -22,13 +22,13 @@
 #include <glib-object.h>
 #include <gio/gio.h>
 
-#define DESKTOP_LOMIRI  "Lomiri"
-#define DESKTOP_UNITY  "Unity"
-#define DESKTOP_MATE   "MATE"
-#define DESKTOP_GNOME  "GNOME"
-#define DESKTOP_XFCE   "XFCE"
-#define DESKTOP_PANTHEON  "PANTHEON"
-#define DESKTOP_BUDGIE  "Budgie"
+static const char *DESKTOP_LOMIRI = "Lomiri";
+static const char *DESKTOP_UNITY = "Unity";
+static const char *DESKTOP_MATE = "MATE";
+static const char *DESKTOP_GNOME = "GNOME";
+static const char *DESKTOP_XFCE = "XFCE";
+static const char *DESKTOP_PANTHEON = "PANTHEON";
+static const char *DESKTOP_BUDGIE = "Budgie";
 
 gboolean ayatana_common_utils_is_lomiri();
 gboolean ayatana_common_utils_is_unity();
