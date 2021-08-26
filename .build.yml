@@ -17,6 +17,8 @@ requires:
     - intltool
     - glib2
     - systemd
+    - gobject-introspection
+    - vala
 
   debian:
     # Useful URL: https://salsa.debian.org/debian-ayatana-team/ayatana-ido
@@ -33,6 +35,9 @@ requires:
     - liblomiri-url-dispatcher-dev
     - libgtest-dev
     - systemd
+    - gobject-introspection
+    - libgirepository1.0-dev
+    - valac
 
   debian:stable:
     # Useful URL: https://salsa.debian.org/debian-ayatana-team/ayatana-ido
@@ -48,6 +53,9 @@ requires:
     - libglib2.0-dev
     - libgtest-dev
     - systemd
+    - gobject-introspection
+    - libgirepository1.0-dev
+    - valac
 
   ubuntu:
     - autopoint
@@ -62,6 +70,9 @@ requires:
     - liblomiri-url-dispatcher-dev
     - libgtest-dev
     - systemd
+    - gobject-introspection
+    - libgirepository1.0-dev
+    - valac
 
   ubuntu:focal:
     - autopoint
@@ -75,6 +86,9 @@ requires:
     - libglib2.0-dev
     - libgtest-dev
     - systemd
+    - gobject-introspection
+    - libgirepository1.0-dev
+    - valac
 
 variables:
   - 'CHECKERS="
