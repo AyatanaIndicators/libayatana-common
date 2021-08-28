@@ -30,41 +30,43 @@ install(TARGETS ayatana-common DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
 
 # AyatanaCommon.gir
 
-find_package(GObjectIntrospection REQUIRED QUIET)
+if (INTROSPECTION_FOUND)
+	add_custom_command(
+	    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir"
+	    DEPENDS "ayatana-common"
+	    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+	    COMMAND
+	    ${INTROSPECTION_SCANNER}
+	    utils.c utils.h
+	    --namespace=AyatanaCommon
+	    --c-include=ayatana/common/utils.h
+	    --quiet
+	    --warn-all
+	    --include=GLib-2.0
+	    --library="ayatana-common"
+	    --library-path=${CMAKE_CURRENT_BINARY_DIR}
+	    --output "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir"
+	)
 
-add_custom_command(
-    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir"
-    DEPENDS "ayatana-common"
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMAND
-    ${INTROSPECTION_SCANNER}
-    utils.c utils.h
-    --namespace=AyatanaCommon
-    --c-include=ayatana/common/utils.h
-    --quiet
-    --warn-all
-    --include=GLib-2.0
-    --library="ayatana-common"
-    --library-path=${CMAKE_CURRENT_BINARY_DIR}
-    --output "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir"
-)
-
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/gir-1.0")
+	install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/gir-1.0")
 
 # AyatanaCommon.vapi
 
-find_package(Vala REQUIRED QUIET)
+	if (VALA_COMPILER)
+		add_custom_command(
+		    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi"
+		    DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir"
+		    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+		    COMMAND
+		    ${VAPI_GEN}
+		    --library=AyatanaCommon
+		    AyatanaCommon.gir
+		)
 
-add_custom_command(
-    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi"
-    DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.gir"
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMAND
-    ${VAPI_GEN}
-    --library=AyatanaCommon
-    AyatanaCommon.gir
-)
+		install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/vala/vapi")
 
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/vala/vapi")
+		add_custom_target("src" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi")
 
-add_custom_target("src" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi")
+	endif()
+
+endif()

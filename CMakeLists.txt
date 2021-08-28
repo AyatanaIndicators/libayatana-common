@@ -51,6 +51,10 @@ pkg_check_modules(
 )
 include_directories(${URLDISPATCHER_INCLUDE_DIRS})
 
+# for GIR and Vala bindings
+find_package (GObjectIntrospection QUIET)
+find_package (Vala QUIET)
+
 set(CC_WARNING_ARGS " -Wall -pedantic -Wextra -Wno-missing-field-initializers")
 
 add_subdirectory(src)
@@ -76,3 +80,14 @@ endif()
 message(STATUS "Install prefix: ${CMAKE_INSTALL_PREFIX}")
 message(STATUS "Unit tests: ${ENABLE_TESTS}")
 message(STATUS "Build with -Werror: ${ENABLE_WERROR}")
+
+if (INTROSPECTION_FOUND)
+	message(STATUS "Build GObjectIntrospection: YES")
+	if (VALA_COMPILER)
+		message(STATUS "Build Vala bindings: YES")
+	else()
+		message(STATUS "Build Vala bindings: NO")
+	endif()
+else()
+	message(STATUS "Build GObjectIntrospection: NO")
+endif()
