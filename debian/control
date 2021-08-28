@@ -65,7 +65,7 @@ Multi-Arch: foreign
 Breaks: ayatana-indicator-application (<< 0.8.0),
         ayatana-indicator-datetime (<< 0.8.0),
         ayatana-indicator-display (<< 0.8.0),
-        ayatana-indicator-keyboard (<< 0.8.0),
+        ayatana-indicator-keyboard (<< 0.7.90),
         ayatana-indicator-messages (<< 0.8.0),
         ayatana-indicator-notifications (<< 0.8.0),
         ayatana-indicator-printers (<< 0.8.0),
