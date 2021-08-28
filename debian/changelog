@@ -1,8 +1,9 @@
-libayatana-common (0.9.3-0) UNRELEASED; urgency=medium
+libayatana-common (0.9.3-0) unstable; urgency=medium
 
-  * Pre-release upstream version bump.
+  * Upstream-provided Debian package for libayatana-common.
+    See upstream ChangeLog for recent changes.
 
- -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Thu, 24 Jun 2021 22:13:52 +0200
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sat, 28 Aug 2021 12:58:45 +0200
 
 libayatana-common (0.9.2-0) unstable; urgency=medium
 

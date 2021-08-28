@@ -1,6 +1,182 @@
+2021-08-28 Mike Gabriel
+
+        * release 0.9.3 (HEAD -> master, tag: 0.9.3)
+
+2021-08-27 Adolfo Jayme Barrientos
+
+        * Translated using Weblate (Spanish) (bf58b50)
+
+2021-08-26 Mike Gabriel
+
+        * Merge branch 'tari01-pr/drop-systemd-alias' (4238bc1)
+
+2021-08-23 Robert Tari
+
+        * Drop systemd target alias (3571fbf)
+
+2021-08-26 Mike Gabriel
+
+        * Merge branch 'tari01-pr/add-vala-bindings' (b32fac9)
+
+2021-08-17 Robert Tari
+
+        * Add Vala Bindings (c7320da)
+
+2021-08-10 Quentin PAGÈS
+
+        * Translated using Weblate (Occitan) (7f9519e)
+
+2021-08-10 Mike Gabriel
+
+        * Merge branch 'tari01-pr/fix-is-lomiri' (4331703)
+
+2021-08-10 Robert Tari
+
+        * Fix is_lomiri function (ccbdc57)
+
+2021-08-05 Mike Gabriel
+
+        * Merge branch 'tari01-pr/add-werror-cmake-option' (a590902)
+
+2021-08-04 Mike Gabriel
+
+        * tests/CMakeLists.txt: Drop -no-pie from CXX_FLAGS and add it as a
+          target link option. (84d2a71)
+        * .build.yml: Add -DENABLE_WERROR=ON build option (for cmake based
+          builds). (8132527)
+
+2021-08-03 Robert Tari
+
+        * Add ENABLE_WERROR CMake option (994baa4)
+
+2021-07-27 Ács Zoltán
+
+        * Translated using Weblate (Hungarian) (8386de0)
+
+2021-07-26 Milo Ivir
+
+        * Translated using Weblate (Croatian) (66ab069)
+
+2021-07-23 Oğuz Ersen
+
+        * Translated using Weblate (Turkish) (18d2451)
+
+2021-07-18 Kristjan Räts
+
+        * Translated using Weblate (Estonian) (d00e33f)
+
+2021-07-15 Boyuan Yang
+
+        * Translated using Weblate (Chinese (Simplified)) (1a69d7a)
+
+2021-07-15 Anders Jonsson
+
+        * Translated using Weblate (Swedish) (4bf4ecc)
+
+2021-07-16 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (f3eedb9)
+
+2021-07-16 Gediminas Murauskas
+
+        * Translated using Weblate (Lithuanian) (fc746a9)
+
+2021-07-15 Yaron Shahrabani
+
+        * Translated using Weblate (Hebrew) (3f900c6)
+
+2021-07-16 J. Lavoie
+
+        * Translated using Weblate (French) (a1cac4a)
+
+2021-07-15 Milan Korecky
+
+        * Translated using Weblate (Czech) (b5b242a)
+
+2021-07-14 Robert Tari
+
+        * Test (40f4c3e)
+        * Test (68ca6a1)
+
+2021-06-27 Mike Gabriel
+
+        * README.md: Add missing parenthesis close. (4610e5b)
+
+2021-06-24 Mike Gabriel
+
+        * Pre-release upstream version bump (0.9.2 -> 0.9.3). (6a5f925)
+        * Merge branch 'tari01-pr/fix-spelling' (e1af9b3)
+
+2021-06-17 Mike Gabriel
+
+        * debian/control: Add B-D: dh-exec (for
+          d/ayatana-indicator-common.install). (fb0975e)
+        * debian/control: Add B-D: intltool. (03f777f)
+
+2021-06-21 Robert Tari
+
+        * Rename ayatana_common_utils_elipsize to
+          ayatana_common_utils_ellipsize (07a3425)
+
+2021-06-16 Robert Tari
+
+        * Skip elipsizing if max characters are 0 (33cd95e)
+
+2021-06-17 Mike Gabriel
+
+        * debian/control: Add B-D: dh-exec (for
+          d/ayatana-indicator-common.install). (1e475a3)
+        * debian/control: Add B-D: intltool. (4a0b24b)
+
+2021-06-16 Robert Tari
+
+        * Merge branch 'sunweaver-pr/systemd-earlier-than-247' (4b6ef9d)
+
+2021-06-16 Mike Gabriel
+
+        * data/CMakeLists.txt: Provide a hacky-whacky approach for finding
+          the system unit dir for systemd less than 247. (85e6e45)
+        * Merge branch 'tari01-pr/update-install-doc' (10381c0)
+
+2021-06-16 Robert Tari
+
+        * INSTALL.md: Add gio-2.0 dependency (a7bc568)
+
+2021-06-16 Mike Gabriel
+
+        * Merge branch 'tari01-pr/add-ayatana-indicators-target' (822f3a3)
+
+2021-06-15 Robert Tari
+
+        * debian/: Add bin:pkg ayatana-indicator-common (moved from src:pkg
+          libayatana-indicator). (02200d2)
+        * .build.yml: Add systemd dependency (67301a9)
+        * data/: Add ayatana-indicators.target (moved from
+          libayatana-indicator). (5a26b01)
+
+2021-06-16 Mike Gabriel
+
+        * Merge branch 'tari01-pr/add-menu-item-lengths' (8b63acd)
+
+2021-06-14 Robert Tari
+
+        * Initialize i18n / gettext for newly added
+          org.ayatana.common.gschema.xml GSettings schema. (a30fd63)
+        * Add ability to ellipsize dynamic menu item lengths. (9be11d9)
+
+2021-06-09 Mike Gabriel
+
+        * Merge branch 'tari01-pr/cmake-install-full' (db18ded)
+
+2021-06-08 Robert Tari
+
+        * src/CMakeLists.txt: Use CMAKE_INSTALL_FULL_*DIR locations (84322ea)
+        * src/libayatana-common.pc.in: Use CMAKE_INSTALL_FULL_*DIR locations
+          (4f0c064)
+
 2021-05-25 Mike Gabriel
 
-        * release 0.9.2 (HEAD -> master, tag: 0.9.2)
+        * release 0.9.2 (d4d621c) (tag: 0.9.2)
 
 2021-05-25 Robert Tari
 
