@@ -7,13 +7,16 @@ Build-Depends: cmake,
                debhelper (>= 9),
                dh-exec,
                dpkg-dev (>= 1.16.1.1),
+               gobject-introspection,
                googletest,
                intltool,
+               libgirepository1.0-dev,
                libgtest-dev,
                liblomiri-url-dispatcher-dev | hello,
                libglib2.0-dev (>= 2.36),
                pkg-config,
                systemd [linux-any],
+               valac,
 Standards-Version: 4.5.1
 Homepage: https://github.com/AyatanaIndicators/libayatana-common
 Vcs-Git: https://github.com/AyatanaIndicators/libayatana-common.git
