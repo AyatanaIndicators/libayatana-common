@@ -38,6 +38,7 @@ if (INTROSPECTION_FOUND)
         COMMAND
         ${INTROSPECTION_SCANNER}
         utils.c utils.h
+        --no-libtool
         --namespace=AyatanaCommon
         --nsversion=0.0
         --c-include=ayatana/common/utils.h
