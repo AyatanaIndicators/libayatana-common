@@ -1,3 +1,5 @@
 usr/include
 usr/lib/*/pkgconfig/libayatana-common.pc
 usr/lib/*/libayatana-common.so
+usr/share/gir-1.0/
+usr/share/vala/vapi/
