@@ -1,6 +1,52 @@
+2021-09-01 Mike Gabriel
+
+        * release 0.9.4 (HEAD -> main, tag: 0.9.4)
+
 2021-08-28 Mike Gabriel
 
-        * release 0.9.3 (HEAD -> master, tag: 0.9.3)
+        * Translated using Weblate (German) (69b0e8b)
+
+2021-08-29 Mike Gabriel
+
+        * debian/control: Fix Breaks: relation between
+          ayatana-indicator-common and ayatana-indicator-keyboard.
+          (d4a0a41)
+        * Merge branch 'tari01-pr/fix-gir-error' (6976edc)
+
+2021-08-29 Robert Tari
+
+        * Fix missing ayatana-common library during GIR scanning (2f582bd)
+        * Whitespace fix (8c9b69a)
+
+2021-08-28 Mike Gabriel
+
+        * debian/gir1.2-ayatanacommon-0.0.install: Add missing file.
+          (5c156a7)
+        * Merge branch 'sunweaver-pr/generate-typelib-file' (1669b29)
+        * debian/: Fix DEB packaging; add GIR, VAPI, translation and GSchema
+          files. Add gir1.2-ayatanacommon-0.0 bin:pkg. (908b36b)
+        * src/CMakeLists.txt: Also generate binary typelib file (and set
+          nsversion for this). (765360a)
+        * Merge branch 'sunweaver-pr/conditional-gir-and-vala' (f3ac7d6)
+        * GIR and Vala bindings: Properly detect GObjectIntrospection and
+          Vala and disable GIR and Vala if not found. (3859fae)
+
+2021-08-28 Weblate
+
+        * Added translation using Weblate (Kurdish (Northern)) (91282da)
+        * Added translation using Weblate (Kurdish (Southern)) (2a7bb3b)
+
+2021-08-28 Mike Gabriel
+
+        * Merge branch 'sunweaver-pr/fix-vala-unittests--against-GLib-2.58'
+          (55155fe)
+        * tests/tst_utils.vala: Use older GLib.assert() API to make tests
+          work correctly when building against GLib 2.58. (d6b78d0)
+        * .travis.yml: Fix branch name what is now the default branch in
+          ayatana-dev-scripts. (8b40ad5)
+        * debian/control: Add B-Ds: valac, gobject-introspection and
+          libgirepository1.0-dev. (39f6704)
+        * release 0.9.3 (0334f03) (tag: 0.9.3)
 
 2021-08-27 Adolfo Jayme Barrientos
 
