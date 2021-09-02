@@ -26,6 +26,7 @@ target_include_directories(tst_utils PUBLIC "${CMAKE_SOURCE_DIR}/src")
 target_link_libraries(tst_utils
     ayatana-common
     ${GLIB_LIBRARIES}
+    ${URL_DISPATCHER_LIBRARIES}
     ${GTEST_LIBRARIES}
     ${GTEST_BOTH_LIBRARIES}
     ${GMOCK_LIBRARIES}
