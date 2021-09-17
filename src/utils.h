@@ -29,6 +29,13 @@ static const char *DESKTOP_GNOME = "GNOME";
 static const char *DESKTOP_XFCE = "XFCE";
 static const char *DESKTOP_PANTHEON = "PANTHEON";
 static const char *DESKTOP_BUDGIE = "Budgie";
+static const char *SESSION_LOMIRI = "ubuntu-touch";
+static const char *SESSION_UNITY = NULL;
+static const char *SESSION_MATE = "mate";
+static const char *SESSION_GNOME = "gnome";
+static const char *SESSION_XFCE = "xfce";
+static const char *SESSION_PANTHEON = NULL;
+static const char *SESSION_BUDGIE = "budgie-desktop";
 
 gboolean ayatana_common_utils_is_lomiri();
 gboolean ayatana_common_utils_is_unity();

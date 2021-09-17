@@ -25,7 +25,7 @@
 
 // TODO: make case insensitive
 gboolean
-is_xdg_current_desktop (const gchar* desktop)
+is_xdg_current_desktop (const gchar* desktop, const gchar* session)
 {
   const gchar *xdg_current_desktop;
   gchar **desktop_names;
@@ -42,49 +42,61 @@ is_xdg_current_desktop (const gchar* desktop)
     }
     g_strfreev (desktop_names);
   }
+
+  if (session != NULL)
+  {
+    const gchar *desktop_session = g_getenv ("DESKTOP_SESSION");
+
+    if (desktop_session != NULL && g_str_equal(desktop_session, session))
+    {
+        return TRUE;
+    }
+
+  }
+
   return FALSE;
 }
 
 gboolean
 ayatana_common_utils_is_lomiri ()
 {
-  return is_xdg_current_desktop(DESKTOP_LOMIRI);
+  return is_xdg_current_desktop(DESKTOP_LOMIRI, SESSION_LOMIRI);
 }
 
 gboolean
 ayatana_common_utils_is_gnome ()
 {
-  return is_xdg_current_desktop(DESKTOP_GNOME);
+  return is_xdg_current_desktop(DESKTOP_GNOME, SESSION_GNOME);
 }
 
 gboolean
 ayatana_common_utils_is_unity ()
 {
-  return is_xdg_current_desktop(DESKTOP_UNITY);
+  return is_xdg_current_desktop(DESKTOP_UNITY, SESSION_UNITY);
 }
 
 gboolean
 ayatana_common_utils_is_mate ()
 {
-  return is_xdg_current_desktop(DESKTOP_MATE);
+  return is_xdg_current_desktop(DESKTOP_MATE, SESSION_MATE);
 }
 
 gboolean
 ayatana_common_utils_is_xfce ()
 {
-  return is_xdg_current_desktop(DESKTOP_XFCE);
+  return is_xdg_current_desktop(DESKTOP_XFCE, SESSION_XFCE);
 }
 
 gboolean
 ayatana_common_utils_is_pantheon ()
 {
-  return is_xdg_current_desktop(DESKTOP_PANTHEON);
+  return is_xdg_current_desktop(DESKTOP_PANTHEON, SESSION_PANTHEON);
 }
 
 gboolean
 ayatana_common_utils_is_budgie ()
 {
-  return is_xdg_current_desktop(DESKTOP_BUDGIE);
+  return is_xdg_current_desktop(DESKTOP_BUDGIE, SESSION_BUDGIE);
 }
 
 gboolean
