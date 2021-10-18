@@ -263,7 +263,11 @@ ayatana_common_utils_zenity_warning (const char * icon_name,
         }
       else
         {
+        #if GLIB_CHECK_VERSION(2, 70, 0)
+          confirmed = g_spawn_check_wait_status (exit_status, &error);
+        #else
           confirmed = g_spawn_check_exit_status (exit_status, &error);
+        #endif
         }
 
       g_free (command_line);
