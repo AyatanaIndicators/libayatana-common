@@ -6,9 +6,12 @@
  - gio-2.0 (>=2.36)
  - cmake (>= 3.13)
  - cmake-extras
- - gtest (>= 1.6.0)
- - gcovr (>= 2.4)
- - lcov (>= 1.9)
+ - vala
+ - intltool
+ - gobject-introspection
+ - gtest (>= 1.6.0) - **For testing**
+ - gcovr (>= 2.4) - **For coverage**
+ - lcov (>= 1.9) - **For coverage**
 
 ## For end-users and packagers
 
