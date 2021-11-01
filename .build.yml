@@ -28,6 +28,7 @@ requires:
     - git
     - cmake
     - cmake-extras
+    - intltool
     - libglib2.0-dev
     - liblomiri-url-dispatcher-dev
     - libgtest-dev
@@ -45,6 +46,7 @@ requires:
     - git
     - cmake
     - cmake-extras
+    - intltool
     - libglib2.0-dev
     - libgtest-dev
     - systemd
@@ -59,6 +61,7 @@ requires:
     - git
     - cmake
     - cmake-extras
+    - intltool
     - libglib2.0-dev
     - liblomiri-url-dispatcher-dev
     - libgtest-dev
@@ -74,6 +77,7 @@ requires:
     - git
     - cmake
     - cmake-extras
+    - intltool
     - libglib2.0-dev
     - libgtest-dev
     - systemd
