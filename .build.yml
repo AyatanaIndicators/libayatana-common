@@ -37,23 +37,6 @@ requires:
     - libgirepository1.0-dev
     - valac
 
-  debian:stable:
-    # Useful URL: https://salsa.debian.org/debian-ayatana-team/ayatana-ido
-    - clang
-    - clang-tools
-    - g++
-    - cppcheck
-    - git
-    - cmake
-    - cmake-extras
-    - intltool
-    - libglib2.0-dev
-    - libgtest-dev
-    - systemd
-    - gobject-introspection
-    - libgirepository1.0-dev
-    - valac
-
   ubuntu:
     - clang
     - clang-tools
