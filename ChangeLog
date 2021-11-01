@@ -1,6 +1,142 @@
+2021-11-01 Mike Gabriel
+
+        * release 0.9.5 (HEAD -> main, tag: 0.9.5)
+
+2021-11-01 Robert Tari
+
+        * Merge branch 'sunweaver-pr/travis-cleanup' (7c08c8a)
+
+2021-10-22 Robert Tari
+
+        * data/CMakeLists.txt: Do not use automatic GSchema compilation
+          (f5373a2)
+
+2021-11-01 Mike Gabriel
+
+        * .build.yml: Drop explicit build requirements list for debian:stable
+          (omitting lomiri-url-dispatcher). (7f5b189)
+        * .build.yml. Add intltool build-requirement. (e48ea60)
+
+2021-10-25 Mike Gabriel
+
+        * .build.yml: Run unit tests in build_scripts: target. (3e03d93)
+        * .build.yml: Drop autogen.sh support. (9ab858c)
+
+2021-10-22 Robert Tari
+
+        * data/CMakeLists.txt: Do not use automatic GSchema compilation
+          (90856e1)
+
+2021-10-21 Mike Gabriel
+
+        * Merge branch 'tari01-pr/use-intltool-merge-translations' (125095d)
+
+2021-10-21 Robert Tari
+
+        * data/CMakeLists.txt: Use intltool_merge_translations instead of
+          execute_process (001010d)
+
+2021-10-21 Mike Gabriel
+
+        * Merge branch 'tari01-pr/compile-gschema-during-installation'
+          (e0262a6)
+
+2021-10-20 Robert Tari
+
+        * Compile GSchema during installation (24bf442)
+
+2021-10-21 Mike Gabriel
+
+        * Merge branch 'tari01-pr/also-check-desktop-session' (3fdc867)
+
+2021-10-18 Robert Tari
+
+        * Manage DESKTOP_SESSION in unit tests (4683727)
+
+2021-09-17 Robert Tari
+
+        * Also check DESKTOP_SESSION when detecting DE (3298ec4)
+
+2021-10-20 Robert Tari
+
+        * .travis.yml: Temporarily disable ppc64le builds (59a93c0)
+
+2021-10-18 Mike Gabriel
+
+        * Merge branch 'tari01-pr/fix-build-warnings' (7114ab4)
+
+2021-10-18 Robert Tari
+
+        * src/utils.c: Replace deprecated g_spawn_check_exit_status (20a5afc)
+
+2021-10-18 Mike Gabriel
+
+        * Merge branch 'tari01-pr/update-installation-instructions' (fb4f2b0)
+
+2021-09-20 Robert Tari
+
+        * INSTALL.md: Update dependencies (edeead6)
+
+2021-10-18 Mike Gabriel
+
+        * Merge branch 'tari01-pr/fix-tests-on-current-desktop' (2797fce)
+
+2021-09-23 Wellington Terumi Uemura
+
+        * Translated using Weblate (Portuguese (Brazil)) (aee6034)
+        * Translated using Weblate (Portuguese (Brazil)) (c002c2c)
+
+2021-09-17 Robert Tari
+
+        * Fix tests to work when current desktop is the same as the one
+          tested (72ac9a7)
+
+2021-09-02 Robert Tari
+
+        * .build.yml: Also run unit tests during CI builds against Ubuntu.
+          (ed34d88)
+        * Fix Travis status image (0ad2502)
+        * Merge branch 'sunweaver-pr/url-dispatcher-link-libraries-in-tests'
+          (4968ed4)
+
 2021-09-01 Mike Gabriel
 
-        * release 0.9.4 (HEAD -> main, tag: 0.9.4)
+        * release 0.9.4 (ecabcbd)
+
+2021-08-28 Mike Gabriel
+
+        * Translated using Weblate (German) (3967820)
+
+2021-08-29 Mike Gabriel
+
+        * debian/control: Fix Breaks: relation between
+          ayatana-indicator-common and ayatana-indicator-keyboard.
+          (8f47244)
+
+2021-08-29 Robert Tari
+
+        * Fix missing ayatana-common library during GIR scanning (21d4adb)
+        * Whitespace fix (3e45864)
+
+2021-08-28 Mike Gabriel
+
+        * debian/gir1.2-ayatanacommon-0.0.install: Add missing file.
+          (cb72491)
+        * debian/: Fix DEB packaging; add GIR, VAPI, translation and GSchema
+          files. Add gir1.2-ayatanacommon-0.0 bin:pkg. (3cceadb)
+        * src/CMakeLists.txt: Also generate binary typelib file (and set
+          nsversion for this). (32575a6)
+        * GIR and Vala bindings: Properly detect GObjectIntrospection and
+          Vala and disable GIR and Vala if not found. (7cb3047)
+
+2021-08-28 Weblate
+
+        * Added translation using Weblate (Kurdish (Northern)) (890f711)
+        * Added translation using Weblate (Kurdish (Southern)) (203b419)
+
+2021-09-01 Mike Gabriel
+
+        * release 0.9.4 (7ba6291) (tag: 0.9.4)
 
 2021-08-28 Mike Gabriel
 
@@ -38,6 +174,8 @@
 
 2021-08-28 Mike Gabriel
 
+        * tests/CMakeLists.txt: Add missing ${URL_DISPATCHER_LIBRARIES} to
+          target_link_libraries(). (d9628fb)
         * Merge branch 'sunweaver-pr/fix-vala-unittests--against-GLib-2.58'
           (55155fe)
         * tests/tst_utils.vala: Use older GLib.assert() API to make tests

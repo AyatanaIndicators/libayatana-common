@@ -1,3 +1,10 @@
+libayatana-common (0.9.5-0) unstable; urgency=medium
+
+  * Upstream-provided Debian package for libayatana-common.
+    See upstream ChangeLog for recent changes.
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Mon, 01 Nov 2021 11:52:22 +0100
+
 libayatana-common (0.9.4-0) unstable; urgency=medium
 
   * Upstream-provided Debian package for libayatana-common.
