@@ -4,12 +4,11 @@ add_library(ayatana-common SHARED
 )
 
 target_link_libraries(ayatana-common
-    ${GLIB_LIBRARIES}
-    ${URLDISPATCHER_LIBRARIES}
+    ${DEPS_LIBRARIES}
 )
 
-if(URLDISPATCHER_FOUND)
-    add_definitions( -DHAS_URLDISPATCHER )
+if(ENABLE_LOMIRI_FEATURES)
+    add_definitions( -DLOMIRI_FEATURES_ENABLED )
 endif()
 
 set(PUBLIC_HEADERS
