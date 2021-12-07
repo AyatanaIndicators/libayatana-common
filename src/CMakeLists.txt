@@ -83,6 +83,10 @@ if (INTROSPECTION_FOUND)
 
         add_custom_target("src" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi")
 
+    else()
+
+        add_custom_target("src" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.typelib")
+
     endif()
 
 endif()
