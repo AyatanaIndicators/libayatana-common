@@ -89,7 +89,7 @@ variables:
 build_scripts:
   - if [ ${DISTRO_NAME} == "debian" ];then
   -     export CFLAGS+=" -Wsign-compare -Wunused-parameter"
-  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
+  -     cppcheck --enable=warning,style,performance,portability,information --suppress=missingInclude .
   - fi
   -
   - if [ -e ./CMakeLists.txt ]; then
