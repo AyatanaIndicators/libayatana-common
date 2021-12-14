@@ -1,6 +1,57 @@
+2021-12-14 Mike Gabriel
+
+        * release 0.9.6 (HEAD -> main, tag: 0.9.6)
+        * Merge branch 'tari01-pr/gir-typelib-without-vala' (cb3b249)
+
+2021-12-07 Robert Tari
+
+        * src/CMakeLists.txt: Build .gir and .typelib when Vala is not
+          present (ee7de81)
+
+2021-12-14 Mike Gabriel
+
+        * Merge branch 'tari01-pr/add-enable-lomiri-features-switch'
+          (2d445b6)
+
+2021-12-06 Robert Tari
+
+        * .build.yml: Add ENABLE_LOMIRI_FEATURES flag and adapt build flow
+          (7c4c023)
+        * Add ENABLE_LOMIRI_FEATURES switch (078be8b)
+
+2021-12-09 Robert Tari
+
+        * .build.yml: Fix cppcheck warnings (a1d1bd5)
+        * src/utils.c: Fix cppcheck warnings (7ef62fa)
+        * Whitespace fix (3672071)
+
+2021-11-18 phlostically
+
+        * Translated using Weblate (Esperanto) (f61623a)
+
+2021-11-12 Mike Gabriel
+
+        * Merge branch 'sunweaver-pr/ppc64le-alive-again' (5a78c99)
+
+2021-11-10 Mike Gabriel
+
+        * .travis.yml: Re-enable ppc64le builds on Travis CI again. (c83758a)
+
+2021-11-10 mamuiz
+
+        * Translated using Weblate (Indonesian) (36bb786)
+
+2021-11-09 Joan CiberSheep
+
+        * Translated using Weblate (Catalan) (b103f02)
+
+2021-11-04 Michele
+
+        * Translated using Weblate (Italian) (da56a73)
+
 2021-11-01 Mike Gabriel
 
-        * release 0.9.5 (HEAD -> main, tag: 0.9.5)
+        * release 0.9.5 (4b2e959) (tag: 0.9.5)
 
 2021-11-01 Robert Tari
 
