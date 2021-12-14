@@ -25,8 +25,7 @@ target_include_directories(tst_utils PUBLIC "${CMAKE_SOURCE_DIR}/src")
 
 target_link_libraries(tst_utils
     ayatana-common
-    ${GLIB_LIBRARIES}
-    ${URL_DISPATCHER_LIBRARIES}
+    ${DEPS_LIBRARIES}
     ${GTEST_LIBRARIES}
     ${GTEST_BOTH_LIBRARIES}
     ${GMOCK_LIBRARIES}
@@ -58,11 +57,11 @@ add_custom_command(
 
 if (VALA_COMPILER)
 
-	add_executable("tst_utils_vala" "${CMAKE_CURRENT_BINARY_DIR}/tst_utils.c")
-	target_include_directories("tst_utils_vala" PUBLIC "${GLIB_INCLUDE_DIRS};${CMAKE_BINARY_DIR}/src")
-	target_link_libraries("tst_utils_vala" "${GLIB_LIBRARIES} -layatana-common -L${CMAKE_BINARY_DIR}/src")
-	target_link_directories("tst_utils_vala" PUBLIC "${CMAKE_BINARY_DIR}/src")
-	add_dependencies("tst_utils_vala" "src")
+    add_executable("tst_utils_vala" "${CMAKE_CURRENT_BINARY_DIR}/tst_utils.c")
+    target_include_directories("tst_utils_vala" PUBLIC "${DEPS_INCLUDE_DIRS};${CMAKE_BINARY_DIR}/src")
+    target_link_libraries("tst_utils_vala" "${DEPS_LIBRARIES} -layatana-common -L${CMAKE_BINARY_DIR}/src")
+    target_link_directories("tst_utils_vala" PUBLIC "${CMAKE_BINARY_DIR}/src")
+    add_dependencies("tst_utils_vala" "src")
 
-	add_test(NAME "TstUtilsVala" COMMAND "${CMAKE_CURRENT_BINARY_DIR}/tst_utils_vala" "${CMAKE_CURRENT_BINARY_DIR}")
+    add_test(NAME "TstUtilsVala" COMMAND "${CMAKE_CURRENT_BINARY_DIR}/tst_utils_vala" "${CMAKE_CURRENT_BINARY_DIR}")
 endif()

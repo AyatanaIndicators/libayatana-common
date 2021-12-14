@@ -17,6 +17,7 @@ set(ABI_VERSION 0)
 option(ENABLE_TESTS "Enable all tests and checks" OFF)
 option(ENABLE_COVERAGE "Enable coverage reports (includes enabling all tests and checks)" OFF)
 option(ENABLE_WERROR "Treat all build warnings as errors" OFF)
+option(ENABLE_LOMIRI_FEATURES "Build with Lomiri-specific libraries, schemas and media" OFF)
 
 if(ENABLE_COVERAGE)
     set(ENABLE_TESTS ON)
@@ -39,17 +40,22 @@ set (CMAKE_INSTALL_FULL_PKGLIBEXECDIR "${CMAKE_INSTALL_FULL_LIBEXECDIR}/${CMAKE_
 find_package (PkgConfig REQUIRED)
 include (FindPkgConfig)
 
-pkg_check_modules(GLIB REQUIRED
+set (
+    DEPS
     glib-2.0>=2.36
     gio-2.0>=2.36
 )
-include_directories (${GLIB_INCLUDE_DIRS})
 
-pkg_check_modules(
-  URLDISPATCHER
-  lomiri-url-dispatcher>=0
-)
-include_directories(${URLDISPATCHER_INCLUDE_DIRS})
+if (ENABLE_LOMIRI_FEATURES)
+    list (
+        APPEND
+        DEPS
+        lomiri-url-dispatcher>=0
+    )
+endif ()
+
+pkg_check_modules (DEPS REQUIRED ${DEPS})
+include_directories (${DEPS_INCLUDE_DIRS})
 
 # for GIR and Vala bindings
 find_package (GObjectIntrospection QUIET)
@@ -82,12 +88,14 @@ message(STATUS "Unit tests: ${ENABLE_TESTS}")
 message(STATUS "Build with -Werror: ${ENABLE_WERROR}")
 
 if (INTROSPECTION_FOUND)
-	message(STATUS "Build GObjectIntrospection: YES")
-	if (VALA_COMPILER)
-		message(STATUS "Build Vala bindings: YES")
-	else()
-		message(STATUS "Build Vala bindings: NO")
-	endif()
+    message(STATUS "Build GObjectIntrospection: YES")
+    if (VALA_COMPILER)
+        message(STATUS "Build Vala bindings: YES")
+    else()
+        message(STATUS "Build Vala bindings: NO")
+    endif()
 else()
-	message(STATUS "Build GObjectIntrospection: NO")
+    message(STATUS "Build GObjectIntrospection: NO")
 endif()
+
+message(STATUS "Build with Lomiri features: ${ENABLE_LOMIRI_FEATURES}")

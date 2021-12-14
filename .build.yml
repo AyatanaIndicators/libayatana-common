@@ -89,11 +89,13 @@ variables:
 build_scripts:
   - if [ ${DISTRO_NAME} == "debian" ];then
   -     export CFLAGS+=" -Wsign-compare -Wunused-parameter"
-  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
+  -     cppcheck --enable=warning,style,performance,portability,information --suppress=missingInclude .
   - fi
   -
   - if [ -e ./CMakeLists.txt ]; then
-  -     if [ ${DISTRO_NAME} == "debian" ] || [ ${DISTRO_NAME} == "ubuntu" ]; then
+  -     if [ ${DISTRO_NAME} == "debian" ]; then
+  -         scan-build $CHECKERS cmake . -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DENABLE_TESTS=ON -DENABLE_WERROR=ON -DENABLE_LOMIRI_FEATURES=ON
+  -     elif [ ${DISTRO_NAME} == "ubuntu" ]; then
   -         scan-build $CHECKERS cmake . -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DENABLE_TESTS=ON -DENABLE_WERROR=ON
   -     else
   -         scan-build $CHECKERS cmake . -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DENABLE_WERROR=ON

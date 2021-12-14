@@ -19,7 +19,7 @@
 
 #include <string.h>
 
-#ifdef HAS_URLDISPATCHER
+#ifdef LOMIRI_FEATURES_ENABLED
 # include <lomiri-url-dispatcher.h>
 #endif
 
@@ -28,13 +28,11 @@ gboolean
 is_xdg_current_desktop (const gchar* desktop, const gchar* session)
 {
   const gchar *xdg_current_desktop;
-  gchar **desktop_names;
-  int i;
 
   xdg_current_desktop = g_getenv ("XDG_CURRENT_DESKTOP");
   if (xdg_current_desktop != NULL) {
-    desktop_names = g_strsplit (xdg_current_desktop, ":", 0);
-    for (i = 0; desktop_names[i]; ++i) {
+    gchar **desktop_names = g_strsplit (xdg_current_desktop, ":", 0);
+    for (int i = 0; desktop_names[i]; ++i) {
       if (!g_strcmp0 (desktop_names[i], desktop)) {
         g_strfreev (desktop_names);
         return TRUE;
@@ -159,17 +157,13 @@ char *
 find_browser ()
 {
   static char * browser_path = NULL;
-  char* tmp_browser_path;
-  gchar **browser_names;
-
-  int i;
 
   if (browser_path == NULL)
   {
-    browser_names = g_strsplit ("x-www-browser,google-chrome,firefox,chromium", ",", 0);
+    gchar **browser_names = g_strsplit ("x-www-browser,google-chrome,firefox,chromium", ",", 0);
 
-    for (i = 0; browser_names[i]; ++i) {
-      tmp_browser_path = g_find_program_in_path (browser_names[i]);
+    for (int i = 0; browser_names[i]; ++i) {
+      char* tmp_browser_path = g_find_program_in_path (browser_names[i]);
 
       if (tmp_browser_path) {
         browser_path = g_strdup (tmp_browser_path);
@@ -203,11 +197,9 @@ ayatana_common_utils_execute_command (const gchar * cmd)
 gboolean
 ayatana_common_utils_open_url (const gchar * url)
 {
-  char * browser = NULL;
-
   if (ayatana_common_utils_is_lomiri())
   {
-#ifdef HAS_URLDISPATCHER
+#ifdef LOMIRI_FEATURES_ENABLED
     lomiri_url_dispatch_send(url, NULL, NULL);
     return TRUE;
 #else
@@ -215,8 +207,7 @@ ayatana_common_utils_open_url (const gchar * url)
 #endif
   }
 
-  if (browser == NULL)
-    browser = find_browser();
+  char * browser = find_browser();
 
   if (browser != NULL)
     return ayatana_common_utils_execute_command(g_strdup_printf("%s '%s'", browser, url));
