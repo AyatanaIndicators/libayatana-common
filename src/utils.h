@@ -1,6 +1,6 @@
 /*
  * Copyright 2021 Marius Gripsgard <marius@ubports.com>
- * Copyright 2021 Robert Tari <robert@tari.in>
+ * Copyright 2021-2022 Robert Tari <robert@tari.in>
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 3, as published
@@ -22,20 +22,20 @@
 #include <glib-object.h>
 #include <gio/gio.h>
 
-static const char *DESKTOP_LOMIRI = "Lomiri";
-static const char *DESKTOP_UNITY = "Unity";
-static const char *DESKTOP_MATE = "MATE";
-static const char *DESKTOP_GNOME = "GNOME";
-static const char *DESKTOP_XFCE = "XFCE";
-static const char *DESKTOP_PANTHEON = "PANTHEON";
-static const char *DESKTOP_BUDGIE = "Budgie";
-static const char *SESSION_LOMIRI = "ubuntu-touch";
-static const char *SESSION_UNITY = NULL;
-static const char *SESSION_MATE = "mate";
-static const char *SESSION_GNOME = "gnome";
-static const char *SESSION_XFCE = "xfce";
-static const char *SESSION_PANTHEON = NULL;
-static const char *SESSION_BUDGIE = "budgie-desktop";
+static const char * const DESKTOP_LOMIRI = "Lomiri";
+static const char * const DESKTOP_UNITY = "Unity";
+static const char * const DESKTOP_MATE = "MATE";
+static const char * const DESKTOP_GNOME = "GNOME";
+static const char * const DESKTOP_XFCE = "XFCE";
+static const char * const DESKTOP_PANTHEON = "PANTHEON";
+static const char * const DESKTOP_BUDGIE = "Budgie";
+static const char * const SESSION_LOMIRI = "ubuntu-touch";
+static const char * const SESSION_UNITY = NULL;
+static const char * const SESSION_MATE = "mate";
+static const char * const SESSION_GNOME = "gnome";
+static const char * const SESSION_XFCE = "xfce";
+static const char * const SESSION_PANTHEON = NULL;
+static const char * const SESSION_BUDGIE = "budgie-desktop";
 
 gboolean ayatana_common_utils_is_lomiri();
 gboolean ayatana_common_utils_is_unity();
