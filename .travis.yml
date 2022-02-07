@@ -24,7 +24,14 @@ before_install:
 install:
   - pip3 install wheel
   - pip3 install PyGithub
-  - ./docker-build --name ${DISTRO} --config .build.yml --install
+  - docker pull ${DISTRO}
+  - docker inspect -f '{{.State.Running}}' libayatana-common-debian-build || true
+  - docker run --name libayatana-common-debian-build --volume /home/travis/build/AyatanaIndicators/libayatana-common:/rootdir -t -d ${DISTRO}
+  - docker exec -t libayatana-common-debian-build find /etc/apt/
+  - docker exec -t libayatana-common-debian-build ls -al /etc/apt/trusted.gpg.d/
+  - docker exec -t libayatana-common-debian-build apt-get update -y
+  - docker exec -t libayatana-common-debian-build env DEBIAN_FRONTEND=noninteractive apt-get install -y autopoint clang clang-tools g++ cppcheck git cmake cmake-extras intltool libglib2.0-dev liblomiri-url-dispatcher-dev libgtest-dev systemd gobject-introspection libgirepository1.0-dev valac
+#  - ./docker-build --name ${DISTRO} --config .build.yml --install
 
 script:
   - ./docker-build --name ${DISTRO} --verbose --config .build.yml --build scripts
