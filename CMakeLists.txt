@@ -38,8 +38,6 @@ endif()
 
 # GNU standard installation directories
 include (GNUInstallDirs)
-set (CMAKE_INSTALL_PKGLIBEXECDIR "${CMAKE_INSTALL_LIBEXECDIR}/${CMAKE_PROJECT_NAME}")
-set (CMAKE_INSTALL_FULL_PKGLIBEXECDIR "${CMAKE_INSTALL_FULL_LIBEXECDIR}/${CMAKE_PROJECT_NAME}")
 
 # Check for prerequisites
 find_package (PkgConfig REQUIRED)
