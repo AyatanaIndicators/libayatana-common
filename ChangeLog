@@ -1,6 +1,52 @@
+2022-02-17 Mike Gabriel
+
+        * release 0.9.7 (HEAD -> main, tag: 0.9.7)
+        * NEWS: Create manually from Git history. (97b620e)
+        * Merge branch 'tari01-pr/drop-extra-compile-flags' (90854b7)
+
+2022-02-17 Robert Tari
+
+        * .build.yml: Drop extra compilation flags (f6abf81)
+
+2022-02-16 Mike Gabriel
+
+        * Merge branch 'tari01-pr/drop-cmake-install-full-pkglibexecdir'
+          (a0cb25c)
+
+2022-02-14 Robert Tari
+
+        * CMakeLists.txt: Drop unused CMAKE_INSTALL_*PKGLIBEXECDIR (6af0973)
+
+2022-02-08 Robert Tari
+
+        * Merge branch 'sunweaver-pr/use-focal-base-image-for-travis-ci'
+          (2e7f36f)
+
+2022-02-07 Mike Gabriel
+
+        * .travis.yml: Run CI builds on Travis CI's Ubuntu focal base system
+          and disable ppc64el builds. (f5dd60c)
+
+2022-01-27 Mike Gabriel
+
+        * Merge branch 'tari01-pr/cleanup-compile-flags' (abbda62)
+
+2022-01-13 Robert Tari
+
+        * CMakeLists.txt: Clean up compilation flags (82f20e9)
+        * src/utils.h: Fix build warnings (fa1e414)
+
+2022-01-07 wigy
+
+        * Translated using Weblate (Hungarian) (9ee70e7)
+
+2022-01-02 ssantos
+
+        * Translated using Weblate (Portuguese) (7e4c530)
+
 2021-12-14 Mike Gabriel
 
-        * release 0.9.6 (HEAD -> main, tag: 0.9.6)
+        * release 0.9.6 (b3364c1) (tag: 0.9.6)
         * Merge branch 'tari01-pr/gir-typelib-without-vala' (cb3b249)
 
 2021-12-07 Robert Tari
