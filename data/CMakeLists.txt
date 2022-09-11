@@ -1,8 +1,5 @@
 # org.ayatana.common.gschema.xml
 
-find_package(Intltool REQUIRED)
-set(ENV{LC_ALL} "C")
-intltool_merge_translations("${CMAKE_CURRENT_SOURCE_DIR}/org.ayatana.common.gschema.xml.in" "${CMAKE_CURRENT_BINARY_DIR}/org.ayatana.common.gschema.xml" ALL UTF8 STYLE "xml" NO_TRANSLATIONS)
 find_package(GSettings REQUIRED)
 add_schema("org.ayatana.common.gschema.xml")
 
