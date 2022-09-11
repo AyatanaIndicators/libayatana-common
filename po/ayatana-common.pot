@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 14:12+0200\n"
+"POT-Creation-Date: 2022-09-11 15:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/org.ayatana.common.gschema.xml.in:1
+#: data/org.ayatana.common.gschema.xml:1
 msgid "Maximum menu text length"
 msgstr ""
 
-#: ../data/org.ayatana.common.gschema.xml.in:2
+#: data/org.ayatana.common.gschema.xml:2
 msgid ""
 "The number of characters to show in dynamic menu items before the text is "
 "ellipsized. Set to 0 to leave unchanged."
