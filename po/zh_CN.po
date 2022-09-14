@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 14:13+0200\n"
+"POT-Creation-Date: 2022-09-14 07:41+0200\n"
 "PO-Revision-Date: 2021-07-17 14:33+0000\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.7.2-dev\n"
 
-#: ../data/org.ayatana.common.gschema.xml.in:1
+#: data/org.ayatana.common.gschema.xml:1
 msgid "Maximum menu text length"
 msgstr "最大菜单文本长度"
 
-#: ../data/org.ayatana.common.gschema.xml.in:2
+#: data/org.ayatana.common.gschema.xml:2
 msgid ""
 "The number of characters to show in dynamic menu items before the text is "
 "ellipsized. Set to 0 to leave unchanged."

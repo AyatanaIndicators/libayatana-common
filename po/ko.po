@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 14:13+0200\n"
+"POT-Creation-Date: 2022-09-14 07:41+0200\n"
 "PO-Revision-Date: 2022-02-28 14:59+0000\n"
 "Last-Translator: 이정희 <daemul72@gmail.com>\n"
-"Language-Team: Korean <https://hosted.weblate.org/projects/"
-"ayatana-indicators/libayatana-common/ko/>\n"
+"Language-Team: Korean <https://hosted.weblate.org/projects/ayatana-"
+"indicators/libayatana-common/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,13 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.11.1-dev\n"
 
-#: ../data/org.ayatana.common.gschema.xml.in:1
+#: data/org.ayatana.common.gschema.xml:1
 msgid "Maximum menu text length"
 msgstr "최대 메뉴 텍스트 길이"
 
-#: ../data/org.ayatana.common.gschema.xml.in:2
+#: data/org.ayatana.common.gschema.xml:2
 msgid ""
 "The number of characters to show in dynamic menu items before the text is "
 "ellipsized. Set to 0 to leave unchanged."
-msgstr "텍스트가 생략되기 전에 동적 메뉴 항목에 표시할 문자 수입니다. 변경되지 않은 "
+msgstr ""
+"텍스트가 생략되기 전에 동적 메뉴 항목에 표시할 문자 수입니다. 변경되지 않은 "
 "상태로 두려면 0으로 설정합니다."
