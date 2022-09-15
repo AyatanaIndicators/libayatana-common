@@ -1,6 +1,40 @@
+2022-09-15 Mike Gabriel
+
+        * release 0.9.8 (HEAD -> main, tag: 0.9.8)
+
+2022-09-14 Mike Gabriel
+
+        * update-po{,t}.sh: Also catch multi-file source file references.
+          (e83ee44)
+        * po/*.po: Update translation strings. (85509c7)
+
+2022-09-12 Robert Tari
+
+        * Merge branch 'sunweaver-pr/simplify-gschema-xml-translation'
+          (f991bca)
+
+2022-09-11 Mike Gabriel
+
+        * po/ayatana-common.pot: Update translation template file. (b75bd36)
+        * Simplify .gschema.xml translation. (2a5d647)
+        * update-po{,t}.sh: Omit ../ at beginning of file names in .po(t)
+          file(s). (ae716f5)
+
+2022-04-23 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (b86a71f)
+
+2022-04-23 sgg
+
+        * Translated using Weblate (Ukrainian) (96411d4)
+
+2022-02-27 이정희
+
+        * Translated using Weblate (Korean) (5af434e)
+
 2022-02-17 Mike Gabriel
 
-        * release 0.9.7 (HEAD -> main, tag: 0.9.7)
+        * release 0.9.7 (f7f7bfd) (tag: 0.9.7)
         * NEWS: Create manually from Git history. (97b620e)
         * Merge branch 'tari01-pr/drop-extra-compile-flags' (90854b7)
 
