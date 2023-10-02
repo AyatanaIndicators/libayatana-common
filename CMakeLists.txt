@@ -1,5 +1,5 @@
-project (libayatana-common C CXX)
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required (VERSION 3.13)
+project (libayatana-common VERSION "0.9.8" LANGUAGES C CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" "${CMAKE_MODULE_PATH}")
 
@@ -7,8 +7,6 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET(CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "..." FORCE)
 endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
-set(PROJECT_VERSION "0.9.8")
-set(PACKAGE ${CMAKE_PROJECT_NAME})
 set(GETTEXT_PACKAGE "ayatana-common")
 set(API_VERSION 0)
 set(ABI_VERSION 0)
