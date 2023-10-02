@@ -7,6 +7,8 @@ target_link_libraries(ayatana-common
     ${DEPS_LIBRARIES}
 )
 
+target_compile_definitions (ayatana-common PUBLIC GETTEXT_PACKAGE="${GETTEXT_PACKAGE}" LOCALEDIR="${CMAKE_INSTALL_FULL_LOCALEDIR}")
+
 if(ENABLE_LOMIRI_FEATURES)
     add_definitions( -DLOMIRI_FEATURES_ENABLED )
 endif()
