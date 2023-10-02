@@ -1,6 +1,6 @@
 /*
  * Copyright 2021 Marius Gripsgard <marius@ubports.com>
- * Copyright 2021-2022 Robert Tari <robert@tari.in>
+ * Copyright 2021-2023 Robert Tari <robert@tari.in>
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 3, as published
@@ -56,5 +56,5 @@ gboolean ayatana_common_utils_execute_command(const gchar * cmd);
 gboolean ayatana_common_utils_open_url(const gchar * url);
 gboolean ayatana_common_utils_have_program(const gchar * program);
 gboolean ayatana_common_utils_zenity_warning(const char *icon_name, const char *title, const char *text);
-
 void ayatana_common_utils_ellipsize(char *sText);
+gboolean ayatana_common_utils_execute_command_warn (const gchar *sProgram, const gchar *sArgs);

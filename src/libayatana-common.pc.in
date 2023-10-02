@@ -5,6 +5,6 @@ includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@/ayatana
 
 Name: Ayatana common
 Description: Ayatana common library
-Version: @PROJECT_VERSION@
+Version: @CMAKE_PROJECT_VERSION@
 Libs: -L${libdir} -layatana-common
 Cflags: -I${includedir}

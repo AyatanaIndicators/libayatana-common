@@ -1,6 +1,6 @@
 /*
  * Copyright 2021 Marius Gripsgard <marius@ubports.com>
- * Copyright 2021 Robert Tari <robert@tari.in>
+ * Copyright 2021-2023 Robert Tari <robert@tari.in>
  *
  * This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 3, as published
@@ -16,12 +16,24 @@
  */
 
 #include "utils.h"
-
+#include <glib/gi18n-lib.h>
 #include <string.h>
 
 #ifdef LOMIRI_FEATURES_ENABLED
 # include <lomiri-url-dispatcher.h>
 #endif
+
+static gboolean bI18nInit = FALSE;
+
+static void initI18n ()
+{
+    if (!bI18nInit)
+    {
+        bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+        bI18nInit = TRUE;
+    }
+}
 
 // TODO: make case insensitive
 gboolean
@@ -303,4 +315,25 @@ void ayatana_common_utils_ellipsize(char *sText)
         gchar *pLastChar = g_utf8_offset_to_pointer(sText, nMaxLetters);
         memcpy(pLastChar, "...\0", 4);
     }
+}
+
+gboolean ayatana_common_utils_execute_command_warn (const gchar *sProgram, const gchar *sArgs)
+{
+    gboolean bHasProgram = ayatana_common_utils_have_program (sProgram);
+
+    if (!bHasProgram)
+    {
+        initI18n ();
+        gchar *sMessage = g_strdup_printf (_("The %s program is required for this action, but it was not found."), sProgram);
+        ayatana_common_utils_zenity_warning ("dialog-warning", _("Warning"), sMessage);
+        g_free (sMessage);
+
+        return FALSE;
+    }
+
+    gchar *sCommand = g_strdup_printf ("%s %s", sProgram, sArgs);
+    gboolean bSuccess = ayatana_common_utils_execute_command (sCommand);
+    g_free (sCommand);
+
+    return bSuccess;
 }
