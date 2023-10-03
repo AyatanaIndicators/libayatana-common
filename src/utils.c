@@ -337,3 +337,40 @@ gboolean ayatana_common_utils_execute_command_warn (const gchar *sProgram, const
 
     return bSuccess;
 }
+
+gboolean ayatana_common_utils_zenity_question (const gchar *sIcon, const gchar *sTitle, const gchar *sText, const gchar *sOk, const gchar *sCancel)
+{
+    gchar *sZenity = g_find_program_in_path ("zenity");
+    gchar *sCommand = g_strdup_printf ("%s --question --icon-name=\"%s\" --title=\"%s\" --text=\"%s\" --ok-label=\"%s\" --cancel-label=\"%s\" --no-wrap", sZenity, sIcon, sTitle, sText, sOk, sCancel);
+    g_free (sZenity);
+    int nStatus = -1;
+    GError *pError = NULL;
+    gboolean bConfirmed = FALSE;
+
+    if (!g_spawn_command_line_sync (sCommand, NULL, NULL, &nStatus, &pError))
+    {
+        bConfirmed = TRUE;
+    }
+    else
+    {
+        #if GLIB_CHECK_VERSION(2, 70, 0)
+            bConfirmed = g_spawn_check_wait_status (nStatus, &pError);
+        #else
+            bConfirmed = g_spawn_check_exit_status (nStatus, &pError);
+        #endif
+    }
+
+    if (pError)
+    {
+        if (!g_error_matches (pError, G_IO_ERROR, G_IO_ERROR_CANCELLED))
+        {
+            g_warning ("%s %s: %s", G_STRLOC, G_STRFUNC, pError->message);
+        }
+
+        g_clear_error (&pError);
+    }
+
+    g_free (sCommand);
+
+    return bConfirmed;
+}
