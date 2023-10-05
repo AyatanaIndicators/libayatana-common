@@ -58,3 +58,4 @@ gboolean ayatana_common_utils_have_program(const gchar * program);
 gboolean ayatana_common_utils_zenity_warning(const char *icon_name, const char *title, const char *text);
 void ayatana_common_utils_ellipsize(char *sText);
 gboolean ayatana_common_utils_execute_command_warn (const gchar *sProgram, const gchar *sArgs);
+gboolean ayatana_common_utils_zenity_question (const gchar *sIcon, const gchar *sTitle, const gchar *sText, const gchar *sOk, const gchar *sCancel);
