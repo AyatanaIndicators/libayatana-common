@@ -1,6 +1,31 @@
+2023-10-06 Mike Gabriel
+
+        * release 0.9.9 (HEAD -> main, tag: 0.9.9)
+
+2023-10-05 Mike Gabriel
+
+        * Merge branch 'tari01-pr/zenity-question' (04d4738)
+
+2023-10-04 Robert Tari
+
+        * Add a Zenity question function (1668609)
+
+2023-10-02 Mike Gabriel
+
+        * Merge branch 'tari01-pr/execute-command-warn' (9bdaeab)
+
+2023-10-02 Robert Tari
+
+        * Add an execute_command with warning (254ae9a)
+        * CMakeLists.txt: Some build warning fixes (6b6c2f9)
+
+2022-12-03 Kevin Zhou
+
+        * Translated using Weblate (Chinese (Simplified)) (2097646)
+
 2022-09-15 Mike Gabriel
 
-        * release 0.9.8 (HEAD -> main, tag: 0.9.8)
+        * release 0.9.8 (59b883c) (tag: 0.9.8)
 
 2022-09-14 Mike Gabriel
 

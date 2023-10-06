@@ -1,3 +1,10 @@
+Overview of changes in libayatana-common 0.9.9
+
+  - Add a Zenity question function.
+  - Add an execute_command with warning.
+  - CMakeLists.txt: Some build warning fixes.
+  - Translation updates.
+
 Overview of changes in libayatana-common 0.9.8
 
   - Simplify .gschema.xml translation.
