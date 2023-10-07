@@ -26,6 +26,7 @@ Package: libayatana-common0
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
+         zenity | lomiri,
 Multi-Arch: same
 Description: Ayatana System Indicators' common API functions (shared library)
  This package contains common API functions used by Ayatana System
