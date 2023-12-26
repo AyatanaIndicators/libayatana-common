@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.13)
-project (libayatana-common VERSION "0.9.9" LANGUAGES C CXX)
+project (libayatana-common VERSION "0.9.10" LANGUAGES C CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" "${CMAKE_MODULE_PATH}")
 

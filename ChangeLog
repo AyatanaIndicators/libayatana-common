@@ -1,6 +1,23 @@
+2023-12-26 Mike Gabriel
+
+        * release 0.9.10 (HEAD -> main, tag: 0.9.10)
+
+2023-10-11 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (1417d54)
+
+2023-10-10 Mike Gabriel
+
+        * Merge branch 'tari01-pr/add-zenity' (ab476c5)
+
+2023-10-07 Robert Tari
+
+        * debian/control: Add zenity dependency (or lomiri alternative to
+          avoid pulling in zenity on lomiri). (c2968ff)
+
 2023-10-06 Mike Gabriel
 
-        * release 0.9.9 (HEAD -> main, tag: 0.9.9)
+        * release 0.9.9 (2b845a9) (tag: 0.9.9)
 
 2023-10-05 Mike Gabriel
 
