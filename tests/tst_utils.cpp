@@ -43,7 +43,7 @@ TEST_F(XdgCurrentDesktopUtilsTest, isLomiri)
     unsetenv("XDG_CURRENT_DESKTOP");
     unsetenv("DESKTOP_SESSION");
     EXPECT_FALSE(ayatana_common_utils_is_lomiri());
-    setenv("DESKTOP_SESSION", "ubuntu-touch", 1);
+    setenv("DESKTOP_SESSION", "lomiri", 1);
     EXPECT_TRUE(ayatana_common_utils_is_lomiri());
     setenv("XDG_CURRENT_DESKTOP", "Lomiri", 1);
     EXPECT_TRUE(ayatana_common_utils_is_lomiri());

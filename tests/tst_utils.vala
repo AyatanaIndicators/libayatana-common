@@ -9,7 +9,7 @@ static int main(string[] args)
     unset_variable("DESKTOP_SESSION");
     unset_variable("XDG_CURRENT_DESKTOP");
     assert(! utils_is_lomiri());
-    set_variable("DESKTOP_SESSION", "ubuntu-touch", true);
+    set_variable("DESKTOP_SESSION", "lomiri", true);
     assert(utils_is_lomiri());
     set_variable("XDG_CURRENT_DESKTOP", "Lomiri", true);
     assert(utils_is_lomiri());
