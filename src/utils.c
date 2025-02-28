@@ -55,13 +55,17 @@ is_xdg_current_desktop (const gchar* desktop, const gchar* session)
 
   if (session != NULL)
   {
-    const gchar *desktop_session = g_getenv ("DESKTOP_SESSION");
-
-    if (desktop_session != NULL && g_str_equal(desktop_session, session))
+    const gchar *xdg_session_desktop = g_getenv ("XDG_SESSION_DESKTOP");
+    if (xdg_session_desktop != NULL && g_str_equal(xdg_session_desktop, session))
     {
         return TRUE;
     }
 
+    const gchar *desktop_session = g_getenv ("DESKTOP_SESSION");
+    if (desktop_session != NULL && g_str_equal(desktop_session, session))
+    {
+        return TRUE;
+    }
   }
 
   return FALSE;
@@ -71,6 +75,12 @@ gboolean
 ayatana_common_utils_is_lomiri ()
 {
   return is_xdg_current_desktop(DESKTOP_LOMIRI, SESSION_LOMIRI);
+}
+
+gboolean
+ayatana_common_utils_is_ubuntutouch ()
+{
+  return is_xdg_current_desktop(DESKTOP_UBUNTUTOUCH, SESSION_UBUNTUTOUCH);
 }
 
 gboolean
