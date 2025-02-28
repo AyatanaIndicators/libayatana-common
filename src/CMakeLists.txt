@@ -19,7 +19,7 @@ set(PUBLIC_HEADERS
 
 set_target_properties(ayatana-common
     PROPERTIES
-    VERSION ${API_VERSION}.0.0
+    VERSION ${API_VERSION}.1.0
     SOVERSION ${ABI_VERSION}
 )
 
@@ -33,7 +33,7 @@ install(TARGETS ayatana-common DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
 
 if (INTROSPECTION_FOUND)
     add_custom_command(
-        OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.gir"
+        OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir"
         DEPENDS "ayatana-common"
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         COMMAND
@@ -41,44 +41,44 @@ if (INTROSPECTION_FOUND)
         utils.c utils.h
         --no-libtool
         --namespace=AyatanaCommon
-        --nsversion=0.0
+        --nsversion=0.1
         --c-include=ayatana/common/utils.h
         --quiet
         --warn-all
         --include=GLib-2.0
         --library="ayatana-common"
         --library-path=${CMAKE_CURRENT_BINARY_DIR}
-        --output "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.gir"
+        --output "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir"
     )
 
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.gir" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/gir-1.0")
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/gir-1.0")
 
 # AyatanaCommon.typelib
 
     add_custom_command(
-        OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.typelib"
-        DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.gir"
+        OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib"
+        DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir"
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         COMMAND
         ${INTROSPECTION_COMPILER}
         --includedir=${CMAKE_CURRENT_BINARY_DIR}
-        ${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.gir
-        -o "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.typelib"
+        ${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir
+        -o "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib"
     )
 
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.typelib" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}/girepository-1.0")
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}/girepository-1.0")
 
 # AyatanaCommon.vapi
 
     if (VALA_COMPILER)
         add_custom_command(
             OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi"
-            DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.typelib"
+            DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib"
             WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
             COMMAND
             ${VAPI_GEN}
             --library=AyatanaCommon
-            AyatanaCommon-0.0.gir
+            AyatanaCommon-0.1.gir
         )
 
         install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon.vapi" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/vala/vapi")
@@ -87,7 +87,7 @@ if (INTROSPECTION_FOUND)
 
     else()
 
-        add_custom_target("src" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.0.typelib")
+        add_custom_target("src" ALL DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib")
 
     endif()
 
