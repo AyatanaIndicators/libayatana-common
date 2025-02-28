@@ -49,6 +49,17 @@ TEST_F(XdgCurrentDesktopUtilsTest, isLomiri)
     EXPECT_TRUE(ayatana_common_utils_is_lomiri());
 }
 
+TEST_F(XdgCurrentDesktopUtilsTest, isUbuntuTouch)
+{
+    unsetenv("XDG_CURRENT_DESKTOP");
+    unsetenv("DESKTOP_SESSION");
+    EXPECT_FALSE(ayatana_common_utils_is_ubuntutouch());
+    setenv("XDG_CURRENT_DESKTOP", "Lomiri", 1);
+    EXPECT_FALSE(ayatana_common_utils_is_ubuntutouch());
+    setenv("DESKTOP_SESSION", "ubuntu-touch", 1);
+    EXPECT_TRUE(ayatana_common_utils_is_ubuntutouch());
+}
+
 TEST_F(XdgCurrentDesktopUtilsTest, isGnome)
 {
     unsetenv("XDG_CURRENT_DESKTOP");

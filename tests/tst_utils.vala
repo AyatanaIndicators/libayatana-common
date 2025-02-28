@@ -14,6 +14,14 @@ static int main(string[] args)
     set_variable("XDG_CURRENT_DESKTOP", "Lomiri", true);
     assert(utils_is_lomiri());
 
+    unset_variable("DESKTOP_SESSION");
+    unset_variable("XDG_CURRENT_DESKTOP");
+    assert(! utils_is_ubuntutouch());
+    set_variable("XDG_CURRENT_DESKTOP", "Lomiri", true);
+    assert(! utils_is_ubuntutouch());
+    set_variable("DESKTOP_SESSION", "ubuntu-touch", true);
+    assert(utils_is_ubuntutouch());
+
     unset_variable("XDG_CURRENT_DESKTOP");
     unset_variable("DESKTOP_SESSION");
     assert(! utils_is_gnome());

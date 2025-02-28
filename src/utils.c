@@ -74,6 +74,12 @@ ayatana_common_utils_is_lomiri ()
 }
 
 gboolean
+ayatana_common_utils_is_ubuntutouch ()
+{
+  return is_xdg_current_desktop(DESKTOP_UBUNTUTOUCH, SESSION_UBUNTUTOUCH);
+}
+
+gboolean
 ayatana_common_utils_is_gnome ()
 {
   return is_xdg_current_desktop(DESKTOP_GNOME, SESSION_GNOME);

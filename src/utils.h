@@ -23,6 +23,7 @@
 #include <gio/gio.h>
 
 static const char * const DESKTOP_LOMIRI = "Lomiri";
+static const char * const DESKTOP_UBUNTUTOUCH = NULL;
 static const char * const DESKTOP_UNITY = "Unity";
 static const char * const DESKTOP_MATE = "MATE";
 static const char * const DESKTOP_GNOME = "GNOME";
@@ -30,6 +31,7 @@ static const char * const DESKTOP_XFCE = "XFCE";
 static const char * const DESKTOP_PANTHEON = "PANTHEON";
 static const char * const DESKTOP_BUDGIE = "Budgie";
 static const char * const SESSION_LOMIRI = "ubuntu-touch";
+static const char * const SESSION_UBUNTUTOUCH = "ubuntu-touch";
 static const char * const SESSION_UNITY = NULL;
 static const char * const SESSION_MATE = "mate";
 static const char * const SESSION_GNOME = "gnome";
@@ -38,6 +40,7 @@ static const char * const SESSION_PANTHEON = NULL;
 static const char * const SESSION_BUDGIE = "budgie-desktop";
 
 gboolean ayatana_common_utils_is_lomiri();
+gboolean ayatana_common_utils_is_ubuntutouch();
 gboolean ayatana_common_utils_is_unity();
 gboolean ayatana_common_utils_is_gnome();
 gboolean ayatana_common_utils_is_mate();
