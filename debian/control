@@ -39,7 +39,7 @@ Section: libdevel
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         gir1.2-ayatanacommon-0.0 (= ${binary:Version}),
+         gir1.2-ayatanacommon-0.1 (= ${binary:Version}),
          libayatana-common0 (= ${binary:Version}),
 Description: Ayatana System Indicators' common API functions (development headers)
  This package contains common API functions used by Ayatana System
@@ -47,7 +47,7 @@ Description: Ayatana System Indicators' common API functions (development header
  .
  This package contains the development headers.
 
-Package: gir1.2-ayatanacommon-0.0
+Package: gir1.2-ayatanacommon-0.1
 Section: introspection
 Architecture: any
 Depends: ${shlibs:Depends},
