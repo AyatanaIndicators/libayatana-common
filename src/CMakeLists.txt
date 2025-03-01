@@ -51,7 +51,7 @@ if (INTROSPECTION_FOUND)
         --output "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir"
     )
 
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/gir-1.0")
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.gir" DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/gir-1.2")
 
 # AyatanaCommon.typelib
 
@@ -66,7 +66,7 @@ if (INTROSPECTION_FOUND)
         -o "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib"
     )
 
-    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}/girepository-1.0")
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/AyatanaCommon-0.1.typelib" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}/girepository-1.2")
 
 # AyatanaCommon.vapi
 
