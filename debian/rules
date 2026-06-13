@@ -6,17 +6,26 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
 
+DEB_CMAKE_EXTRA_FLAGS = \
+    -DENABLE_TESTS=ON \
+    -DENABLE_COVERAGE=OFF \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DENABLE_LOMIRI_FEATURES=ON \
+    $(NULL)
+
 %:
-	dh $@
+	dh $@ --with gir
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		-DENABLE_TESTS=ON \
-		-DCMAKE_INSTALL_DIR=/usr \
+		$(DEB_CMAKE_EXTRA_FLAGS)
 		$(NULL)
 
 override_dh_missing:
 	dh_missing --fail-missing
+
+#override_dh_installchangelogs:
+#	dh_installchangelogs NEWS
 
 get-orig-source:
 	uscan --noconf --force-download --rename --download-current-version --destdir=..
