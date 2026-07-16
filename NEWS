@@ -1,3 +1,8 @@
+Overview of changes in libayatana-common 0.9.13
+
+  - Revert "src/CMakeLists.txt: Install GIR files to
+    gir(|epository)-1.2 (instead of 1.0).".
+
 Overview of changes in libayatana-common 0.9.12
 
   - src/CMakeLists.txt: Install GIR files to gir(|epository)-1.2

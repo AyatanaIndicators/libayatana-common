@@ -1,6 +1,13 @@
+2026-07-16 Mike Gabriel
+
+        * Release 0.9.13 (HEAD -> main, tag: 0.9.13)
+        * debian/source/format: use 3.0 (native) (9346d6e)
+        * Revert "src/CMakeLists.txt: Install GIR files to
+          gir(|epository)-1.2 (instead of 1.0)." (3e8361b)
+
 2026-06-13 Mike Gabriel
 
-        * Release 0.9.12 (HEAD -> main, tag: 0.9.12)
+        * Release 0.9.12 (497260f) (tag: 0.9.12)
         * debian/: Sync in official Debian packaging. (cd8ecab)
 
 2025-03-01 Mike Gabriel

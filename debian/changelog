@@ -1,3 +1,10 @@
+libayatana-common (0.9.13) unstable; urgency=medium
+
+  * Upstream-provided Debian package for libayatana-common. See upstream
+    ChangeLog for recent changes.
+
+ -- UBports developers <developers@ubports.com>  Thu, 16 Jul 2026 14:36:58 +0200
+
 libayatana-common (0.9.12) unstable; urgency=medium
 
   * Upstream-provided Debian package for libayatana-common. See upstream
