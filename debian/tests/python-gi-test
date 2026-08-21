@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+#
+# Make sure gobject introspection works
+
+import gi
+
+gi.require_version('AyatanaCommon', '0.1')
+from gi.repository import AyatanaCommon
+
+assert AyatanaCommon.utils_is_gnome() in (True, False)
