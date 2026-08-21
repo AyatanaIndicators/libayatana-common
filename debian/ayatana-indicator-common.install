@@ -1,4 +1,4 @@
-#! /usr/bin/dh-exec
+#!/usr/bin/dh-exec
 [linux-any] usr/lib/systemd
-usr/share/locale/
 usr/share/glib-2.0/schemas/
+usr/share/locale/
