@@ -149,8 +149,7 @@ Files: AUTHORS
  data/org.ayatana.common.gschema.xml
  debian/ayatana-indicator-common.install
  debian/control
- debian/files
- debian/gir1.2-ayatanacommon-0.0.install
+ debian/gir1.2-ayatanacommon-0.1.install
  debian/libayatana-common-dev.install
  debian/libayatana-common0.install
  debian/libayatana-common0.symbols
@@ -215,7 +214,9 @@ License: UNKNOWN
  FIXME
 
 Files: debian/changelog
-Copyright: attributions.
+Copyright: attribution for debian/.
+  attributions for debian/.
+  attributions.
 License: UNKNOWN
  FIXME
 
@@ -223,4 +224,3 @@ Files: ChangeLog
 Copyright: headers (18179a1)
 License: UNKNOWN
  FIXME
-
